@@ -93,7 +93,7 @@ export default function PendaftaranCareerFair() {
 
   useEffect(() => {
     if (isSubmitted) {
-      const timer = setTimeout(() => setIsSubmitted(false), 4000);
+      const timer = setTimeout(() => setIsSubmitted(false), 3000);
       return () => clearTimeout(timer);
     }
   }, [isSubmitted]);
@@ -101,7 +101,7 @@ export default function PendaftaranCareerFair() {
   const onSubmit = (data) => {
     console.log("=== PENDAFTARAN BERHASIL ===");
     console.log("Nama      :", data.namaLengkap);
-    console.log("ID Mentee : Rizal Evendi - Reza Kurniawan");
+    console.log("ID        : Svarnatech Labs");
     console.log("Data lengkap:", data);
 
     setNamaTerkirim(data.namaLengkap);
@@ -136,7 +136,7 @@ export default function PendaftaranCareerFair() {
               Pendaftaran Berhasil!
             </p>
             <p className="text-slate-500 text-xs mt-0.5">
-              {namaTerkirim} • Rizal Evendi (Reza Kurniawan)
+               Registrasi Berhasil, {namaTerkirim} - Svarnatech Labs
             </p>
           </div>
         </div>
@@ -230,7 +230,7 @@ export default function PendaftaranCareerFair() {
                       required: "Email wajib diisi",
                       pattern: {
                         value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                        message: "Masukkan alamat email yang valid",
+                        message: "Format email tidak valid"
                       },
                     })}
                     className={inputDasar}
